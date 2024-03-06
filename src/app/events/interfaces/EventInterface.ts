@@ -1,5 +1,5 @@
 export default interface Event {
-  key: number;
+  id: number;
   name: string;
   date: Date;
   guests: string;

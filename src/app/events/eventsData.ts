@@ -3,7 +3,7 @@
 
 const eventsDelete = [
   {
-    key: 1,
+    id: 1,
     name: 'Evento 1',
     date: new Date("2024,03,20"),
     guests: '20',
@@ -11,7 +11,7 @@ const eventsDelete = [
     address: "Agustin Gonzalez #520 Colonia El centenario",
   },
   {
-    key: 2,
+    id: 2,
     name: 'Evento 2',
     date: new Date("2024,03,20"),
     guests: '20',
@@ -19,7 +19,7 @@ const eventsDelete = [
     address: "Agustin Gonzalez #520 Colonia El centenario",
   },
   {
-    key: 3,
+    id: 3,
     name: 'Evento 3',
     date: new Date("2024,03,20"),
     guests: '20',
@@ -27,7 +27,7 @@ const eventsDelete = [
     address: "Agustin Gonzalez #520 Colonia El centenario",
   },
   {
-    key: 4,
+    id: 4,
     name: 'Evento 4',
     date: new Date("2024,03,20"),
     guests: '20',

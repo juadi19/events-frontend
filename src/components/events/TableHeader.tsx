@@ -8,7 +8,7 @@ export default function TableHeader() {
       <HeaderTitle title="Invitado" />
       <HeaderTitle title="Fecha del Evento" />
       <HeaderTitle title="Dirección" />
-      <HeaderTitle title="Nota" />
+      <HeaderTitle title="Actions" />
     </div>
   )
 }
