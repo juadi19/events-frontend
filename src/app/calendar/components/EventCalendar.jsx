@@ -1,14 +1,9 @@
-import { Calendar, momentLocalizer, dayjsLocalizer } from "react-big-calendar";
-import moment from "moment";
-import dayjs from "dayjs";
 import React, { useEffect, useState } from "react";
-
-// import "../styles/App.css";
+import { Calendar, dayjsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
+import dayjs from "dayjs";
 import AddEvent from "./AddEvent";
 import Link from "next/link";
-import { get } from "http";
-import { use } from "react";
 
 export default function EventCalendar() {
   const localizer = dayjsLocalizer(dayjs);
@@ -29,6 +24,7 @@ export default function EventCalendar() {
         start: dayjs(event.when).toDate(),
         end: dayjs(event.when).toDate(),
         title: event.title,
+        id: event.id,
       };
     });
     setEvents(newEvents);
@@ -48,7 +44,7 @@ export default function EventCalendar() {
         events={events}
         style={{ height: "100vh" }}
         onSelectEvent={(event) => {
-          console.log(event);
+          window.location.href = "/event/" + event.id;
         }}
         views={["month"]}
       />
