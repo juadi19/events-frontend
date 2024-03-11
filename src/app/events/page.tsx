@@ -25,10 +25,11 @@ const icon: React.JSX.Element = (
 export default function EventsPage() {
   return (
     <DefaultLayout>
-      <div>
+      <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <ButtonComponent value='Agregar Evento' width='w-50' icon={icon} />
-        <EventsTable />
-      </div>
+      </div>  
+
+      <EventsTable />
     </DefaultLayout>
   )
 }
