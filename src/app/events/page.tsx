@@ -3,7 +3,6 @@ import React from 'react';
 import DefaultLayout from '@/components/Layouts/DefaultLayout';
 import ButtonComponent from '@/app/ui/ButtonComponent';
 import EventsTable from '@/components/events/EventsTable';
-import Breadcrumb from '@/components/Breadcrumbs/Breadcrumb';
 
 const icon: React.JSX.Element = (
   <svg

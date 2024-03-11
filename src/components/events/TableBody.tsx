@@ -1,5 +1,4 @@
-import React from 'react';
-import eventsDelete from '@/app/events/eventsData';
+import React, { useEffect, useState } from 'react';
 import BodyCard from './BodyCard';
 import BodyActions from './BodyActions';
 import Event from '@/app/events/interfaces/EventInterface';
@@ -50,34 +49,51 @@ export default function TableBody() {
     </svg>
   )
 
+  const setDateFormat = (date: string) => {
+    return date.substring(0, 10);
+  };
+
+  const [events, setEvents] = useState<Event[]>([]);
+
+  const getEvents = async () => {
+    const res = await fetch("http://localhost:3000/events", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: "Bearer " + localStorage.getItem("JWT"),
+      },
+    });
+
+    const data = await res.json();
+
+    setEvents(data);
+    console.log(data)
+  };
+
+  useEffect(() => {
+    getEvents();
+  }, []);
+
   return (
     <>
-      {eventsDelete.map((event: Event) => (
+      {events.map(( event: Event ) => (
         <Link
           href={`/event/${event.id}`}
-          className={`grid grid-cols-3 sm:grid-cols-5 hover:bg-slate-200 ${
-            event.id === eventsDelete.length - 1
+          className={`grid grid-cols-3 sm:grid-cols-4 hover:bg-slate-200 ${
+            event.id === events.length - 1
               ? ""
               : "border-b border-stroke dark:border-strokedark"
           }`}
           key={event.id}
         >
           <div className="flex items-center gap-3 p-2.5 xl:p-5">
-            <div className="flex-shrink-0">
-              {event.id}
-            </div>
             <p className="hidden text-black dark:text-white sm:block">
-              {event.name}
+              {event.title}
             </p>
           </div>
 
           <BodyCard
-          data={event.guests}
-          containerStyle="flex"
-          textStyle="text-black dark:text-white"
-          />
-          <BodyCard
-          data={event.date.toDateString()}
+          data={ setDateFormat(event.when) }
           containerStyle="flex"
           textStyle="text-meta-3"
           />

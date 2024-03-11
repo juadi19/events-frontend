@@ -1,8 +1,10 @@
 export default interface Event {
   id: number;
-  name: string;
-  date: Date;
-  guests: string;
+  title: string;
+  description?: string;
   note: string;
+  when: string;
   address: string;
+  price?: number;
+  type: "undefined" | "boda" | "cumpleaños" | "XV" | "Reunion" | "otro";
 }
