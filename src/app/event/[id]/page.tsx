@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import { Event } from "@/interfaces/index";
+import EventCard from "@/components/event/EventCard";
+import Link from "next/link";
 
 interface EventPageProps {
   params: {
@@ -40,14 +42,16 @@ const EventPage: React.FC<EventPageProps> = ({ params }) => {
 
   return (
     <DefaultLayout>
-      {event ? (
-        <div>
-          <h2>{event.title}</h2>
-          <p>{event.address}</p>
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )}
+      <div className="flex justify-end">
+        <Link
+          href="#"
+          className="inline-flex items-center justify-center rounded-full bg-black px-10 py-2 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10"
+        >
+          Registrar invitados
+        </Link>
+      </div>
+
+      {event ? <EventCard event={event} /> : <p>Loading...</p>}
     </DefaultLayout>
   );
 };

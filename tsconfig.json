@@ -26,7 +26,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/calendar/components/EventCalendar.js"
+    "src/app/calendar/components/EventCalendar.js",
+    "src/components/event/index.js"
   ],
   "exclude": ["node_modules"]
 }
