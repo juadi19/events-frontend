@@ -2,8 +2,16 @@
 import React, { useState } from "react";
 import { Option } from "@/interfaces";
 
-const SelectGroupOne = ({ options }: { options: Option[] }) => {
-  const [selectedOption, setSelectedOption] = useState<string>("");
+
+const SelectGroupOne = ({
+  options,
+  selectedOption,
+  setSelectedOption,
+}: {
+  options: Option[];
+  selectedOption: string;
+  setSelectedOption: (value: string) => void;
+}) => {
   const [isOptionSelected, setIsOptionSelected] = useState<boolean>(false);
 
   const changeTextColor = () => {
@@ -12,11 +20,7 @@ const SelectGroupOne = ({ options }: { options: Option[] }) => {
 
   return (
     <div className="mb-4.5">
-      <label className="mb-2.5 block text-black dark:text-white">
-        {" "}
-        Tipo{" "}
-      </label>
-
+      <label className="mb-2.5 block text-black dark:text-white"> Tipo </label>
       <div className="relative z-20 bg-transparent dark:bg-form-input">
         <select
           value={selectedOption}
@@ -31,13 +35,15 @@ const SelectGroupOne = ({ options }: { options: Option[] }) => {
           <option value="" disabled className="text-body dark:text-bodydark">
             Selecciona el tipo del evento
           </option>
-          {
-            options.map(option => (
-              <option key={option.value} value={option.value} className="text-body dark:text-bodydark capitalize">
-                {option.title}
-              </option>
-            ))
-          }
+          {options.map((option) => (
+            <option
+              key={option.value}
+              value={option.value}
+              className="text-body dark:text-bodydark capitalize"
+            >
+              {option.title}
+            </option>
+          ))}
         </select>
 
         <span className="absolute right-4 top-1/2 z-30 -translate-y-1/2">

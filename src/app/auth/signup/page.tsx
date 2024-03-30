@@ -56,7 +56,7 @@ const SignUp: React.FC = () => {
       if (response.ok) {
         const { token } = await response.json();
         localStorage.setItem("JWT", token);
-        window.location.href = "/";
+        window.location.href = "/signin";
       } else {
         setName("");
         setEmail("");
