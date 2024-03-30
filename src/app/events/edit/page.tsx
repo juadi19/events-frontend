@@ -10,7 +10,7 @@ import { Option } from "@/interfaces";
 const dropdownOptions: Option[] = [
   {
     value: 1,
-    title: "boda"
+    title: "Boda"
   },
   {
     value: 2,
@@ -18,18 +18,18 @@ const dropdownOptions: Option[] = [
   },
   {
     value: 3,
-    title: "cumpleaños"
+    title: "Cumpleaños"
   },
   {
     value: 3,
-    title: "graduación"
+    title: "Graduación"
   },
 ]
 
 export default function EventsCreate() {
   return (
     <DefaultLayout>
-      <Breadcrumb pageName="Crear Evento" />
+      <Breadcrumb pageName="Modificar Evento" />
 
       <div className="flex flex-col gap-9">
         {/* <!-- Contact Form --> */}
@@ -47,7 +47,7 @@ export default function EventsCreate() {
 
               <TextInput title="Dirección" placeholder="Escribe la dirección del evento" mandatory />
 
-              <TextInput title="Teléfono de contacto" placeholder="333-333-3333" type="" />
+              <TextInput title="Telefono" placeholder="333-333-3333" type="number" />
 
               <TextInput title="Precio" placeholder="140" type="text" />
 
@@ -67,7 +67,7 @@ export default function EventsCreate() {
               </div>
 
               <button className="col-start-1 col-end-3 w-full justify-center rounded bg-primary p-3 font-medium text-gray hover:bg-opacity-90">
-                Crear Evento
+                Send Message
               </button>
             </div>
           </form>

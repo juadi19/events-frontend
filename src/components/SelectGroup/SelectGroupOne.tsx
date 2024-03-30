@@ -25,7 +25,7 @@ const SelectGroupOne = ({ options }: { options: Option[] }) => {
             changeTextColor();
           }}
           className={`relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary ${
-            isOptionSelected ? "text-black dark:text-white" : ""
+            isOptionSelected ? "text-black dark:text-white capitalize" : ""
           }`}
         >
           <option value="" disabled className="text-body dark:text-bodydark">
@@ -33,7 +33,7 @@ const SelectGroupOne = ({ options }: { options: Option[] }) => {
           </option>
           {
             options.map(option => (
-              <option key={option.value} value={option.value} className="text-body dark:text-bodydark">
+              <option key={option.value} value={option.value} className="text-body dark:text-bodydark capitalize">
                 {option.title}
               </option>
             ))
