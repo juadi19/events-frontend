@@ -5,7 +5,7 @@ export interface Event {
   note: string;
   when: string;
   address: string;
-  phoneContact: null;
+  phoneContact: string;
   price: null;
   type: string;
 }
