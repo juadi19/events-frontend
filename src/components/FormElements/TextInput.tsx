@@ -1,10 +1,11 @@
-import React, { HTMLInputTypeAttribute } from "react";
-import { MandaroryMark } from "./MandatoryMark";
+import React, { HTMLInputTypeAttribute } from 'react';
+import { MandaroryMark } from './MandatoryMark';
 
 export const TextInput = ({
   title,
   placeholder,
   mandatory,
+
   type,
   value,
   onChange,
@@ -22,7 +23,7 @@ export const TextInput = ({
         {title} {mandatory ? <MandaroryMark /> : false}
       </label>
       <input
-        type={type == undefined ? "text" : type}
+        type={type === undefined ? "text" : type}
         placeholder={placeholder}
         className="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
         value={value}

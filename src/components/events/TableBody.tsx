@@ -104,7 +104,7 @@ export default function TableBody() {
           />
 
           <div className="flex items-center space-x-3.5 justify-evenly">
-            <BodyActions icon={deleteIcon} />
+            <BodyActions icon={deleteIcon} route="/events/edit" />
             <BodyActions icon={editIcon} route="/events/edit" />
           </div>
 

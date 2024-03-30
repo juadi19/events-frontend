@@ -1,33 +1,31 @@
 "use client";
-import React from "react";
-import DefaultLayout from "../../../components/Layouts/DefaultLayout";
-import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
-import SelectGroupOne from "@/components/SelectGroup/SelectGroupOne";
-import DatePickerOne from "@/components/FormElements/DatePicker/DatePickerOne";
-import DatePickerTwo from "@/components/FormElements/DatePicker/DatePickerTwo";
-import { TextInput } from "@/components/FormElements/TextInput";
+import React, { useState } from 'react'
+import DefaultLayout from '../../../components/Layouts/DefaultLayout';
+import Breadcrumb from '@/components/Breadcrumbs/Breadcrumb';
+import SelectGroupOne from '@/components/SelectGroup/SelectGroupOne';
+import DatePickerOne from '@/components/FormElements/DatePicker/DatePickerOne';
+import { TextInput } from '@/components/FormElements/TextInput';
 import { Option } from "@/interfaces";
 import { eventNames } from "process";
-import { useState } from "react";
 
 const dropdownOptions: Option[] = [
   {
     value: 1,
-    title: "Boda",
+    title: "boda"
   },
   {
     value: 2,
-    title: "XV",
+    title: "XV"
   },
   {
     value: 3,
-    title: "Cumpleaños",
+    title: "cumpleaños"
   },
   {
     value: 3,
-    title: "Graduación",
+    title: "graduación"
   },
-];
+]
 
 export default function EventsCreate() {
   const [eventName, setEventName] = useState("");
@@ -144,9 +142,9 @@ export default function EventsCreate() {
               />
 
               <TextInput
-                title="Telefono"
+                title="Teléfono de contacto"
                 placeholder="333-333-3333"
-                type="number"
+                type="tel"
                 value={eventPhone}
                 onChange={handleEventPhone}
               />
@@ -154,7 +152,7 @@ export default function EventsCreate() {
               <TextInput
                 title="Precio"
                 placeholder="140"
-                type="text"
+                type="number"
                 value={eventPrice}
                 onChange={handleEventPrice}
               />
@@ -182,6 +180,7 @@ export default function EventsCreate() {
                   onChange={handleEventNote}
                 ></textarea>
               </div>
+
 
               <button
                 type="submit"
